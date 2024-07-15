@@ -1,0 +1,83 @@
+* {
+	font-family: 'Courier New', Courier, monospace;
+	box-sizing: border-box;
+	padding: 0;
+	margin: 0;
+	background-color: black;
+	color: rgb(224, 224, 224);
+}
+
+body {
+	height: 100vh;
+
+	display: grid;
+	grid-template-rows: 1fr 9fr;
+	position: relative;
+}
+
+header {
+	padding: 2rem;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-direction: column;
+	gap: 1rem;
+}
+
+header > div {
+	font-weight: 550;
+	font-size: 2.5rem;
+}
+
+.book-grid {
+	padding: 2rem;
+	height: min-content;
+	width: 100vw;
+
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+
+.book {
+	width: 16rem;
+	height: 16rem;
+	padding: 0.5rem;
+
+	display: grid;
+	
+	outline: solid 1px rgb(224, 224, 224);
+	overflow-y: auto;
+	font-size: 0.9rem;
+}
+
+.title span {
+	font-style: italic;
+}
+
+.readButton {
+	width: 6rem;
+	height: min-content;
+}
+
+.deleteButton {
+	width: 4rem;
+	height: min-content;
+}
+
+.dialog-container {
+	position: relative;
+}
+
+dialog {
+	position: absolute;
+	margin: auto;
+}
+
+button {
+	border: solid 1px rgb(224, 224, 224);
+	background: none;
+	padding: 0.25rem;
+	font-size: 0.75rem;
+}
