@@ -116,19 +116,34 @@ class Form {
 		this.addBookBtn.addEventListener("click", () => {
 			this.modal.showModal();
 		});
+
 		this.closeFormBtn.addEventListener("click", () => {
 			this.modal.close();
 		});
+
+		this.pages.addEventListener("input", () => {
+			if (!this.validatePages(this.pages.value)) {
+				this.pages.setCustomValidity("Please enter a numeric value.");
+			}
+			else {
+				this.pages.setCustomValidity("");
+			}
+		});
+
 		this.modal.addEventListener("submit", (event) => {
 			event.preventDefault();
 			library.addBook(new Book(form.title.value, form.author.value, form.pages.value, form.read.checked ? "Read" : "Not read"));
 			form.title.value = "";
 			form.pages.value = "";
 			form.author.value = "";
-			form.pages.value = "";
 			form.read.checked = false;
 			form.modal.close();
 		});
+	};
+
+	validatePages(input) {
+		const regex = /^[0-9]*$/;
+		return regex.test(input);
 	};
 
 };
