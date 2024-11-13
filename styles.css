@@ -75,6 +75,30 @@ dialog {
 	margin: auto;
 }
 
+form {
+	display: grid;
+	grid-template-rows: repeat(4, 1fr);
+	gap: 0.5rem;
+	padding: 1rem;
+}
+
+.input {
+	display: flex;
+	justify-content: space-between;
+	gap: 1rem;
+}
+
+.read-input,
+.form-buttons {
+	display: flex;
+	justify-content: center;
+	gap: 1rem;
+}
+
+.form-buttons {
+	margin-top: 1rem;
+}
+
 button {
 	border: solid 1px rgb(224, 224, 224);
 	background: none;
